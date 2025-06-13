@@ -8,7 +8,7 @@ import {
   Button,
   ActivityIndicator,
   TextInput,
-  TouchableOpacity
+  TouchableOpacity,
 } from 'react-native'
 import { useEffect } from 'react'
 
@@ -32,14 +32,37 @@ export default function App() {
   return (
     <View style={styles.container}>
       <StatusBar style='auto' />
-      <Button title='boton nativo' onPress={() => alert('oprimiste el boton nativo')}></Button>
+      {/* boton nativo */}
+      <Button
+        title='boton nativo'
+        onPress={() => alert('oprimiste el boton nativo')}></Button>
+      {/* boton personalizado */}
       <TouchableOpacity
-      style={styles.button}
-      activeOpacity={0.8}
-      onPress={() => alert('¡Oprimiste el botón Touchable!')}
-    >
-      <Text style={styles.text}>✨ Tocar Aquí ✨</Text>
-    </TouchableOpacity>
+        style={styles.button}
+        activeOpacity={0.8}
+        onPress={() => alert('¡Oprimiste el botón Touchable!')}>
+        <Text style={styles.text}>✨ Tocar Aquí ✨</Text>
+      </TouchableOpacity>
+
+      {/* simulacion de carga */}
+      <ActivityIndicator
+        size='large'
+        color='#0000ff'
+        style={{ marginTop: 20 }}
+      />
+      
+      {/* input de texto */}
+      <TextInput
+        style={{
+          height: 40,
+          borderColor: 'gray',
+          borderWidth: 1,
+          marginTop: 20,
+          paddingHorizontal: 10,
+          width: '80%',
+        }}
+        placeholder='Escribe algo aquí...'
+        />
     </View>
   )
 }
