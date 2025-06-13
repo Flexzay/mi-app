@@ -11,6 +11,7 @@ import {
   TouchableOpacity,
 } from 'react-native'
 import { useEffect } from 'react'
+import colors from 'core/constants/colors'
 
 export default function App() {
   const [loaded, error] = useFonts({
@@ -50,7 +51,7 @@ export default function App() {
         color='#0000ff'
         style={{ marginTop: 20 }}
       />
-      
+
       {/* input de texto */}
       <TextInput
         style={{
@@ -75,7 +76,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   button: {
-    backgroundColor: '#4CAF50',
+    backgroundColor: colors.secondary,
     paddingVertical: 14,
     paddingHorizontal: 30,
     borderRadius: 30,
