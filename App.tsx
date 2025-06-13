@@ -1,7 +1,15 @@
 import { useFonts } from 'expo-font'
 import { StatusBar } from 'expo-status-bar'
 import * as SplashScreen from 'expo-splash-screen'
-import { StyleSheet, Text, View } from 'react-native'
+import {
+  StyleSheet,
+  Text,
+  View,
+  Button,
+  ActivityIndicator,
+  TextInput,
+  TouchableOpacity
+} from 'react-native'
 import { useEffect } from 'react'
 
 export default function App() {
@@ -23,10 +31,15 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Hola mundo estoy con fuente bold!</Text>
-      <Text style={styles.text1}>Hola mundo estoy con fuente  light!</Text>
-      <Text style={styles.text2}>Hola mundo estoy con fuente regular!</Text>
       <StatusBar style='auto' />
+      <Button title='boton nativo' onPress={() => alert('oprimiste el boton nativo')}></Button>
+      <TouchableOpacity
+      style={styles.button}
+      activeOpacity={0.8}
+      onPress={() => alert('¡Oprimiste el botón Touchable!')}
+    >
+      <Text style={styles.text}>✨ Tocar Aquí ✨</Text>
+    </TouchableOpacity>
     </View>
   )
 }
@@ -38,19 +51,23 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  button: {
+    backgroundColor: '#4CAF50',
+    paddingVertical: 14,
+    paddingHorizontal: 30,
+    borderRadius: 30,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 4.65,
+    elevation: 8,
+    marginTop: 20,
+  },
   text: {
-    color: '#000',
-    fontSize: 20,
-    fontFamily: 'PlaypenSans-Bold',
-  },
-  text1: {
-    color: '#000',
-    fontSize: 20,
-    fontFamily: 'PlaypenSans-Light',
-  },
-  text2: {
-    color: '#000',
-    fontSize: 20,
-    fontFamily: 'PlaypenSans-Regular',
+    color: 'white',
+    fontSize: 18,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    letterSpacing: 1,
   },
 })
