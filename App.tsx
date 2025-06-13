@@ -9,6 +9,7 @@ import {
 } from 'react-native'
 import { useEffect } from 'react'
 import CustomButton from './src/core/components/button' 
+import { Input } from 'core/components/input'
 
 export default function App() {
   const [loaded, error] = useFonts({
@@ -31,6 +32,7 @@ export default function App() {
     <View style={styles.container}>
       <StatusBar style='auto' />
       <Text style={styles.title}>¡Bienvenidos 👋!</Text>
+      <Input value='' onChange={console.log} />
       <CustomButton title="Presióname" onPress={() => alert('¡Botón personalizado tocado!')} />
     </View>
   )
